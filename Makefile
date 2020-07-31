@@ -1,7 +1,7 @@
 default:
 	@apt-get moo
 
-build:
-	docker build --pull --tag "127.0.0.1/zonemaster:latest" .
+local:
+	docker build --pull --tag "127.0.0.1/zonemaster-cli:latest" .
 
-.PHONY: default build
+.PHONY: default local

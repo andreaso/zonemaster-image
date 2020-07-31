@@ -1,0 +1,32 @@
+---
+
+name: Publish image
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Image tag
+        required: true
+        default: latest
+
+jobs:
+  build_and_push:
+    name: Build and Push
+
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Register timestamp tag
+        run: echo "::set-env name=TIMESTAMP::$(date --utc +%Y%m%d%H%M%S)"
+
+      - name: Build and push
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: "${{ github.repository }}/zonemaster-cli"
+          tags: "${{ github.event.inputs.tag }}, ${{ env.TIMESTAMP }}"
