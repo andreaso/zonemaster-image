@@ -18,3 +18,4 @@ COPY profile.json /etc/zonemaster-profile.json
 RUN adduser --disabled-password --gecos "Zone Master" --uid 4848 zonemaster
 USER zonemaster
 ENTRYPOINT ["/usr/local/bin/zonemaster-cli", "--profile", "/etc/zonemaster-profile.json"]
+CMD ["--help"]
