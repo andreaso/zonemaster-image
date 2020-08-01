@@ -14,8 +14,9 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 RUN cpanm --from https://www.cpan.org Zonemaster::LDNS Zonemaster::Engine Zonemaster::CLI \
   && rm -rf /root/.cpanm/
-COPY profile.json /etc/zonemaster-profile.json
+COPY entry /entry
+COPY profile.json.in /etc/zonemaster-profile.json.in
 RUN adduser --disabled-password --gecos "Zone Master" --uid 4848 zonemaster
 USER zonemaster
-ENTRYPOINT ["/usr/local/bin/zonemaster-cli", "--profile", "/etc/zonemaster-profile.json"]
+ENTRYPOINT ["/entry"]
 CMD ["--help"]

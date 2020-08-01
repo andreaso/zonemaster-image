@@ -1,6 +1,6 @@
 {
   "net" : {
-    "ipv6" : false
+    "ipv6" : __BOOL__
   },
   "test_cases" : [
     "address01",

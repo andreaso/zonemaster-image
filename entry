@@ -1,0 +1,14 @@
+#!/bin/bash
+set -o errexit
+set -o nounset
+
+do_ipv6="false"
+if [ -f /proc/net/if_inet6 ] && [ "$(wc --lines < /proc/net/if_inet6)" -ge "3" ]; then
+    do_ipv6="true"
+fi
+
+profile=$(mktemp)
+trap 'rm "$profile"' EXIT
+
+sed -e "s/__BOOL__/${do_ipv6}/" /etc/zonemaster-profile.json.in > "$profile"
+/usr/local/bin/zonemaster-cli --profile "$profile" "$@"
