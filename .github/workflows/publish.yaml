@@ -29,4 +29,4 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           repository: "${{ github.repository }}/zonemaster-cli"
-          tags: "${{ github.event.inputs.tag }}, ${{ env.TIMESTAMP }}"
+          tags: "${{ env.TIMESTAMP }}, ${{ github.event.inputs.tag }}"
