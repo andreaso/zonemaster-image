@@ -26,7 +26,7 @@ jobs:
         uses: docker/build-push-action@v1
         with:
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          registry: docker.pkg.github.com
-          repository: "${{ github.repository }}/zonemaster-cli"
+          password: ${{ secrets.GRU }}
+          registry: ghcr.io
+          repository: "${{ github.repository_owner }}/zonemaster-cli"
           tags: "${{ env.TIMESTAMP }}, ${{ github.event.inputs.tag }}"

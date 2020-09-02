@@ -10,11 +10,11 @@ for the Zonemaster project.
 ## Usage
 
 ```
-docker run --rm --tty docker.pkg.github.com/andreaso/zonemaster-image/zonemaster-cli --help
+docker run --rm --tty ghcr.io/andreaso/zonemaster-cli --help
 ```
 
 ```
-docker run --rm --tty docker.pkg.github.com/andreaso/zonemaster-image/zonemaster-cli DOMAIN
+docker run --rm --tty ghcr.io/andreaso/zonemaster-cli DOMAIN
 ```
 
 
