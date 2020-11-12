@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:20.10
 LABEL org.opencontainers.image.source https://github.com/andreaso/zonemaster-image
 RUN apt-get update \
   && apt-get install --yes --no-install-recommends \
