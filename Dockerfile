@@ -2,16 +2,15 @@ FROM ubuntu:20.04
 LABEL org.opencontainers.image.source https://github.com/andreaso/zonemaster-image
 RUN apt-get update \
   && apt-get install --yes --no-install-recommends \
-  autoconf automake build-essential cpanminus libclone-perl \
-  libdevel-checklib-perl libfile-sharedir-perl libfile-slurp-perl \
-  libidn11-dev libintl-perl libio-socket-inet6-perl libjson-pp-perl \
-  liblist-moreutils-perl liblocale-msgfmt-perl libmoosex-getopt-perl \
-  libmail-rfc822-address-perl libmodule-find-perl libtext-reflow-perl \
-  libmodule-install-perl libmodule-install-xsutil-perl libmoose-perl \
-  libnet-ip-perl libpod-coverage-perl libreadonly-xs-perl \
-  libtest-simple-perl libssl-dev libtest-differences-perl \
+  cpanminus make libc6-dev libidn11-dev libssl-dev \
+  libclone-perl libdevel-checklib-perl libemail-valid-perl \
+  libfile-sharedir-perl libfile-slurp-perl libintl-perl \
+  libio-socket-inet6-perl libjson-xs-perl liblist-moreutils-perl \
+  liblocale-msgfmt-perl libmailtools-perl libmodule-find-perl \
+  libmodule-install-xsutil-perl libmoosex-getopt-perl libmoosex-singleton-perl \
+  libpod-coverage-perl libreadonly-xs-perl libtest-differences-perl \
   libtest-exception-perl libtest-fatal-perl libtest-pod-perl \
-  libtext-csv-perl libwww-perl libtool m4 \
+  libtext-csv-perl libtext-reflow-perl \
   && rm -rf /var/lib/apt/lists/*
 RUN cpanm --from https://www.cpan.org Zonemaster::LDNS Zonemaster::Engine Zonemaster::CLI \
   && rm -rf /root/.cpanm/
