@@ -22,11 +22,17 @@ jobs:
       - name: Register timestamp tag
         run: echo "TIMESTAMP=$(date --utc +%Y%m%d%H%M%S)" >> "$GITHUB_ENV"
 
-      - name: Build and push
-        uses: docker/build-push-action@v1
+      - name: Login to GHCR
+        uses: docker/login-action@v1
         with:
+          registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GRU }}
-          registry: ghcr.io
-          repository: "${{ github.repository_owner }}/zonemaster-cli"
-          tags: "${{ env.TIMESTAMP }}, ${{ github.event.inputs.tag }}"
+
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository_owner }}/zonemaster-cli:${{ env.TIMESTAMP }}
+            ghcr.io/${{ github.repository_owner }}/zonemaster-cli:${{ github.event.inputs.tag }}
