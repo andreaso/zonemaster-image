@@ -8,7 +8,7 @@ RUN apt-get update \
   libio-socket-inet6-perl libjson-xs-perl liblist-moreutils-perl \
   liblocale-msgfmt-perl libmailtools-perl libmodule-find-perl \
   libmodule-install-xsutil-perl libmoosex-getopt-perl libmoosex-singleton-perl \
-  libpod-coverage-perl libreadonly-xs-perl libtest-differences-perl \
+  libnet-interface-perl libpod-coverage-perl libreadonly-xs-perl libtest-differences-perl \
   libtest-exception-perl libtest-fatal-perl libtest-pod-perl \
   libtext-csv-perl libtext-reflow-perl \
   && rm -rf /var/lib/apt/lists/*
