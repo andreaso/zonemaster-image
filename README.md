@@ -30,6 +30,12 @@ There is also a crude attempt being made to autodetect whatever the
 container running this image is capable of doing IPv6 queries or not.
 
 
+## Versioning
+
+The Docker image is tagged according to corresponding [Zonemaster release][4].
+
+
 [1]: https://github.com/zonemaster/zonemaster-cli
 [2]: https://www.afnic.fr/
 [3]: https://internetstiftelsen.se/
+[4]: https://github.com/zonemaster/zonemaster/releases

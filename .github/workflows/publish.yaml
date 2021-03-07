@@ -2,25 +2,38 @@
 
 name: Publish image
 
-on:
-  workflow_dispatch:
-    inputs:
-      tag:
-        description: Image tag
-        required: true
-        default: latest
+on: workflow_dispatch
 
 jobs:
   build_and_push:
     name: Build and Push
 
     runs-on: ubuntu-20.04
+    env:
+      ZMREL: 2020.2
+
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
 
-      - name: Register timestamp tag
-        run: echo "TIMESTAMP=$(date --utc +%Y%m%d%H%M%S)" >> "$GITHUB_ENV"
+      - name: Register snapshot tag
+        run: echo "SNAPSHOT=snapshot-$(date --utc +%Y%m%d%H%M%S)" >> "$GITHUB_ENV"
+
+      - name: Register branch tag
+        if: github.ref != 'refs/heads/main'
+        run: echo "BRANCH=$(echo ${GITHUB_REF#refs/heads/} | sed -e 's/[^a-zA-Z0-9]/-/g')" >> "$GITHUB_ENV"
+
+      - name: Register branch tag
+        if: github.ref == 'refs/heads/main'
+        run: echo "BRANCH=latest" >> "$GITHUB_ENV"
+
+      - name: Register release tag
+        if: github.ref != 'refs/heads/main'
+        run: echo "RELEASE=test-$ZMREL" >> "$GITHUB_ENV"
+
+      - name: Register release tag
+        if: github.ref == 'refs/heads/main'
+        run: echo "RELEASE=$ZMREL" >> "$GITHUB_ENV"
 
       - name: Login to GHCR
         uses: docker/login-action@v1
@@ -35,5 +48,6 @@ jobs:
           pull: true
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/zonemaster-cli:${{ env.TIMESTAMP }}
-            ghcr.io/${{ github.repository_owner }}/zonemaster-cli:${{ github.event.inputs.tag }}
+            ghcr.io/${{ github.repository_owner }}/zonemaster-cli:${{ env.SNAPSHOT }}
+            ghcr.io/${{ github.repository_owner }}/zonemaster-cli:${{ env.BRANCH }}
+            ghcr.io/${{ github.repository_owner }}/zonemaster-cli:${{ env.RELEASE }}

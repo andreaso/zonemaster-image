@@ -12,8 +12,10 @@ RUN apt-get update \
   libtest-exception-perl libtest-fatal-perl libtest-pod-perl \
   libtext-csv-perl libtext-reflow-perl \
   && rm -rf /var/lib/apt/lists/*
-RUN cpanm --from https://www.cpan.org Zonemaster::LDNS Zonemaster::Engine Zonemaster::CLI \
-  && rm -rf /root/.cpanm/
+RUN cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-LDNS-2.1.0.tar.gz \
+    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-Engine-v4.1.0.tar.gz \
+    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-CLI-v3.0.4.tar.gz \
+    && rm -rf /root/.cpanm/
 COPY entry /entry
 COPY profile.json.in /etc/zonemaster-profile.json.in
 RUN adduser --disabled-password --gecos "Zone Master" --uid 4848 zonemaster
