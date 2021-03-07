@@ -1,7 +1,7 @@
 # Zonemaster Docker image
 
 This repository is used to produce a custom [Zonemaster CLI][1] Docker
-image. That being the CLI version of https://zonemaster.net/.
+image. That being the CLI version of <https://zonemaster.net/>.
 
 We have [AFNIC][2] and [The Swedish Internet Foundation][3] to thank
 for the Zonemaster project.
@@ -9,11 +9,11 @@ for the Zonemaster project.
 
 ## Usage
 
-```
+```shell
 docker run --rm --tty ghcr.io/andreaso/zonemaster-cli --help
 ```
 
-```
+```shell
 docker run --rm --tty ghcr.io/andreaso/zonemaster-cli DOMAIN
 ```
 

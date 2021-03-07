@@ -1,5 +1,5 @@
 FROM ubuntu:20.10
-LABEL org.opencontainers.image.source https://github.com/andreaso/zonemaster-image
+LABEL org.opencontainers.image.source="https://github.com/andreaso/zonemaster-image"
 RUN apt-get update \
   && apt-get install --yes --no-install-recommends \
   cpanminus make libc6-dev libidn11-dev libssl-dev \
