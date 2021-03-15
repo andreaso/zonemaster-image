@@ -13,7 +13,7 @@ RUN apt-get update \
   libtext-csv-perl libtext-reflow-perl \
   && rm -rf /var/lib/apt/lists/*
 RUN cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-LDNS-2.1.0.tar.gz \
-    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-Engine-v4.1.0.tar.gz \
+    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-Engine-v4.1.1.tar.gz \
     && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-CLI-v3.0.4.tar.gz \
     && rm -rf /root/.cpanm/
 COPY entry /entry
