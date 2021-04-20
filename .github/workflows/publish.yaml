@@ -4,6 +4,10 @@ name: Publish image
 
 on: workflow_dispatch
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   build_and_push:
     name: Build and Push
