@@ -14,7 +14,7 @@ docker run --rm --tty ghcr.io/andreaso/zonemaster-cli --help
 ```
 
 ```shell
-docker run --rm --tty ghcr.io/andreaso/zonemaster-cli DOMAIN
+docker run --rm --network host --tty ghcr.io/andreaso/zonemaster-cli DOMAIN
 ```
 
 

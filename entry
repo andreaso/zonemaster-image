@@ -3,7 +3,7 @@ set -o errexit
 set -o nounset
 
 do_ipv6="false"
-if [ -f /proc/net/if_inet6 ] && [ "$(wc --lines < /proc/net/if_inet6)" -ge "3" ]; then
+if [ -f /proc/net/if_inet6 ] && grep --quiet --invert-match --extended-regexp "(^fe80)|(\blo$)" /proc/net/if_inet6; then
     do_ipv6="true"
 fi
 
