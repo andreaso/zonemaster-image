@@ -32,9 +32,9 @@ RUN apt-get update \
   libtext-reflow-perl \
   make \
   && rm -rf /var/lib/apt/lists/*
-RUN cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-LDNS-2.1.0.tar.gz \
-    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-Engine-v4.1.1.tar.gz \
-    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-CLI-v3.0.4.tar.gz \
+RUN cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-LDNS-2.2.0.tar.gz \
+    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-Engine-v4.2.0.tar.gz \
+    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-CLI-v3.1.0.tar.gz \
     && rm -rf /root/.cpanm/
 COPY entry /entry
 COPY profile.json.in /etc/zonemaster-profile.json.in
