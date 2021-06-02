@@ -17,6 +17,8 @@ docker run --rm --tty ghcr.io/andreaso/zonemaster-cli:2021.1 --help
 docker run --rm --network host --tty ghcr.io/andreaso/zonemaster-cli:2021.1 DOMAIN
 ```
 
+(Suggesting `--network host` since it's more likely to have IPv6 connectivity by default.)
+
 
 ## Custom profile
 
