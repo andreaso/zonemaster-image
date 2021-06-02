@@ -7,8 +7,4 @@ if [ -f /proc/net/if_inet6 ] && grep --quiet --invert-match --extended-regexp "(
     do_ipv6="true"
 fi
 
-profile=$(mktemp)
-trap 'rm "$profile"' EXIT
-
-sed -e "s/__BOOL__/${do_ipv6}/" /etc/zonemaster-profile.json.in > "$profile"
-/usr/local/bin/zonemaster-cli --profile "$profile" "$@"
+/usr/local/bin/zonemaster-cli --profile <(sed -e "s/__BOOL__/${do_ipv6}/" /etc/zonemaster-profile.json.in) "$@"

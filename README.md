@@ -10,14 +10,14 @@ for the Zonemaster project.
 ## Usage
 
 ```shell
-docker run --rm --tty ghcr.io/andreaso/zonemaster-cli:2021.1 --help
+docker run --rm --cap-drop=all --security-opt=no-new-privileges --read-only --tty ghcr.io/andreaso/zonemaster-cli:2021.1 --help
 ```
 
 ```shell
-docker run --rm --network host --tty ghcr.io/andreaso/zonemaster-cli:2021.1 DOMAIN
+docker run --rm --cap-drop=all --security-opt=no-new-privileges --read-only --network=host --tty ghcr.io/andreaso/zonemaster-cli:2021.1 DOMAIN
 ```
 
-(Suggesting `--network host` since it's more likely to have IPv6 connectivity by default.)
+(Suggesting `--network=host` since it's more likely to have IPv6 connectivity by default.)
 
 
 ## Custom profile
