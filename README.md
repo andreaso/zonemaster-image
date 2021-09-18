@@ -23,7 +23,7 @@ docker run --rm --user=4848 --cap-drop=all --security-opt=no-new-privileges --re
 ## Custom profile
 
 This Docker image uses a custom Zonemaster profile which differs from
-the default in that the _nameserver03_ AXFR test is skipped. Partly
+the default in that the [nameserver03][5] AXFR test is skipped. Partly
 because arbitrary AXFR queries can potentially be seen as noisy or
 impolite. Partly because it's not a configuration issue I'm overly
 concerned about once you get past your initial setup.
@@ -41,3 +41,4 @@ The Docker image is tagged according to corresponding [Zonemaster release][4].
 [2]: https://www.afnic.fr/
 [3]: https://internetstiftelsen.se/
 [4]: https://github.com/zonemaster/zonemaster/releases
+[5]: https://github.com/zonemaster/zonemaster/blob/master/docs/specifications/tests/Nameserver-TP/nameserver03.md
