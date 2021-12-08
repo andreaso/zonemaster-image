@@ -26,7 +26,8 @@ jobs:
       - name: Register non-main test tags
         if: github.ref != 'refs/heads/main'
         run: |
-          echo "BRANCH=$(echo ${GITHUB_REF#refs/heads/} | sed -e 's/[^a-zA-Z0-9]/-/g')" >> "$GITHUB_ENV"
+          GRENEN=${GITHUB_REF#refs/heads/}
+          echo "BRANCH=${GRENEN//[^a-zA-Z0-9]/-}" >> "$GITHUB_ENV"
           echo "RELEASE=test-$ZMREL" >> "$GITHUB_ENV"
 
       - name: Register main release tags
