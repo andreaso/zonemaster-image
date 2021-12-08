@@ -33,6 +33,7 @@
     "dnssec15",
     "dnssec16",
     "dnssec17",
+    "dnssec18",
     "delegation01",
     "delegation02",
     "delegation03",
