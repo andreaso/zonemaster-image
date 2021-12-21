@@ -33,8 +33,8 @@ RUN apt-get update \
   make \
   && rm -rf /var/lib/apt/lists/*
 RUN cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-LDNS-2.2.1.tar.gz \
-    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-Engine-v4.3.0.tar.gz \
-    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-CLI-v3.1.1.tar.gz \
+    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-Engine-v4.4.0.tar.gz \
+    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-CLI-v3.2.0.tar.gz \
     && rm -rf /root/.cpanm/
 COPY entry /entry
 COPY profile.json.in /etc/zonemaster-profile.json.in
