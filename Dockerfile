@@ -10,7 +10,7 @@ RUN apt-get update \
   libemail-valid-perl \
   libfile-sharedir-perl \
   libfile-slurp-perl \
-  libidn11-dev \
+  libidn2-dev \
   libintl-perl \
   libio-socket-inet6-perl \
   libjson-xs-perl \
@@ -22,7 +22,7 @@ RUN apt-get update \
   libmoosex-getopt-perl \
   libmoosex-singleton-perl \
   libpod-coverage-perl \
-  libreadonly-xs-perl \
+  libreadonly-perl \
   libssl-dev \
   libtest-differences-perl \
   libtest-exception-perl \
@@ -34,9 +34,9 @@ RUN apt-get update \
   make \
   && rm -rf /var/lib/apt/lists/*
 RUN cpanm --configure-args="--no-internal-ldns" \
-             https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-LDNS-2.2.1.tar.gz \
-    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-Engine-v4.4.0.tar.gz \
-    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-CLI-v3.2.0.tar.gz \
+             https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-LDNS-2.2.2.tar.gz \
+    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-Engine-v4.5.0.tar.gz \
+    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-CLI-v4.0.0.tar.gz \
     && rm -rf /root/.cpanm/
 COPY entry /entry
 COPY profile.json.in /etc/zonemaster-profile.json.in

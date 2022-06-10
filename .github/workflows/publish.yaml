@@ -14,7 +14,7 @@ jobs:
 
     runs-on: ubuntu-20.04
     env:
-      ZMREL: 2021.2.1
+      ZMREL: 2022.1
 
     steps:
       - name: Check out repository
