@@ -1,4 +1,4 @@
-FROM ubuntu:21.10
+FROM ubuntu:22.04
 LABEL org.opencontainers.image.source="https://github.com/andreaso/zonemaster-image"
 RUN apt-get update \
   && apt-get install --yes --no-install-recommends \
@@ -14,6 +14,7 @@ RUN apt-get update \
   libintl-perl \
   libio-socket-inet6-perl \
   libjson-xs-perl \
+  libldns-dev \
   liblist-moreutils-perl \
   libmailtools-perl \
   libmodule-find-perl \
@@ -32,7 +33,8 @@ RUN apt-get update \
   libtext-reflow-perl \
   make \
   && rm -rf /var/lib/apt/lists/*
-RUN cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-LDNS-2.2.1.tar.gz \
+RUN cpanm --configure-args="--no-internal-ldns" \
+             https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-LDNS-2.2.1.tar.gz \
     && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-Engine-v4.4.0.tar.gz \
     && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-CLI-v3.2.0.tar.gz \
     && rm -rf /root/.cpanm/
