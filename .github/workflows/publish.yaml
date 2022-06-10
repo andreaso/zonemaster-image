@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Register snapshot tag
         run: echo "SNAPSHOT=snapshot-$(date --utc +%Y%m%d%H%M%S)" >> "$GITHUB_ENV"
