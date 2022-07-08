@@ -12,7 +12,7 @@ jobs:
   build_and_push:
     name: Build and Push
 
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     env:
       ZMREL: 2022.1
 
