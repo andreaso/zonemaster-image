@@ -3,6 +3,9 @@
 This repository is used to produce a custom [Zonemaster CLI][1] Docker
 image. That being the CLI version of <https://zonemaster.net/>.
 
+Do note there (now) also exists an official [zonemaster/cli][6]
+image. See the [Zonemaster CLI README][7] for more info.
+
 We have [AFNIC][2] and [The Swedish Internet Foundation][3] to thank
 for the Zonemaster project.
 
@@ -42,3 +45,5 @@ The Docker image is tagged according to corresponding [Zonemaster release][4].
 [3]: https://internetstiftelsen.se/
 [4]: https://github.com/zonemaster/zonemaster/releases
 [5]: https://github.com/zonemaster/zonemaster/blob/master/docs/specifications/tests/Nameserver-TP/nameserver03.md
+[6]: https://hub.docker.com/r/zonemaster/cli
+[7]: https://github.com/zonemaster/zonemaster-cli/blob/master/README.md#docker
