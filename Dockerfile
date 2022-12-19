@@ -14,13 +14,13 @@ RUN apt-get update \
   libintl-perl \
   libio-socket-inet6-perl \
   libjson-xs-perl \
-  libldns-dev \
   liblist-moreutils-perl \
   libmailtools-perl \
   libmodule-find-perl \
   libmodule-install-xsutil-perl \
   libmoosex-getopt-perl \
   libmoosex-singleton-perl \
+  libnet-ip-xs-perl \
   libpod-coverage-perl \
   libreadonly-perl \
   libssl-dev \
@@ -31,12 +31,12 @@ RUN apt-get update \
   libtest-pod-perl \
   libtext-csv-perl \
   libtext-reflow-perl \
+  libtry-tiny-perl \
   make \
   && rm -rf /var/lib/apt/lists/*
-RUN cpanm --configure-args="--no-internal-ldns" \
-             https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-LDNS-2.2.2.tar.gz \
-    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-Engine-v4.5.1.tar.gz \
-    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-CLI-v4.0.1.tar.gz \
+RUN cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-LDNS-3.0.0.tar.gz \
+    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-Engine-v4.6.0.tar.gz \
+    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-CLI-v5.0.0.tar.gz \
     && rm -rf /root/.cpanm/
 COPY entry /entry
 COPY profile.json.in /etc/zonemaster-profile.json.in
