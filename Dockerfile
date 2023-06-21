@@ -15,6 +15,8 @@ RUN apt-get update \
   libio-socket-inet6-perl \
   libjson-xs-perl \
   liblist-moreutils-perl \
+  liblocale-po-perl \
+  liblog-any-perl \
   libmailtools-perl \
   libmodule-find-perl \
   libmodule-install-xsutil-perl \
@@ -32,11 +34,12 @@ RUN apt-get update \
   libtext-csv-perl \
   libtext-reflow-perl \
   libtry-tiny-perl \
+  libyaml-libyaml-perl \
   make \
   && rm -rf /var/lib/apt/lists/*
-RUN cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-LDNS-3.1.0.tar.gz \
-    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-Engine-v4.6.2.tar.gz \
-    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-CLI-v5.0.2.tar.gz \
+RUN cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-LDNS-3.2.0.tar.gz \
+    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-Engine-v4.7.0.tar.gz \
+    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-CLI-v6.0.0.tar.gz \
     && rm -rf /root/.cpanm/
 COPY entry /entry
 COPY profile.json.in /etc/zonemaster-profile.json.in
