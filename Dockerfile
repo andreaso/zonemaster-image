@@ -1,4 +1,4 @@
-FROM ubuntu:22.10
+FROM ubuntu:23.04
 LABEL org.opencontainers.image.source="https://github.com/andreaso/zonemaster-image"
 RUN apt-get update \
   && apt-get install --yes --no-install-recommends \
@@ -40,7 +40,7 @@ RUN cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-LDNS-3.1.0
     && rm -rf /root/.cpanm/
 COPY entry /entry
 COPY profile.json.in /etc/zonemaster-profile.json.in
-RUN adduser --disabled-password --gecos "Zone Master" --uid 4848 zonemaster
+RUN useradd --create-home --comment "Zone Master" --shell /bin/dash --user-group --uid 4848 zonemaster
 USER zonemaster
 ENTRYPOINT ["/entry"]
 CMD ["--help"]
