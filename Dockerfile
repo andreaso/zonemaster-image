@@ -1,3 +1,4 @@
+# checkov:skip=CKV_DOCKER_2:Healthcheck less applicable to CLI-style image.
 FROM ubuntu:23.10
 LABEL org.opencontainers.image.source="https://github.com/andreaso/zonemaster-image"
 RUN apt-get update \
