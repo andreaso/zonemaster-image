@@ -6,6 +6,8 @@
     "address01",
     "address02",
     "address03",
+    "basic01",
+    "basic02",
     "basic03",
     "connectivity01",
     "connectivity02",
@@ -71,6 +73,7 @@
     "zone07",
     "zone08",
     "zone09",
-    "zone10"
+    "zone10",
+    "zone11"
   ]
 }
