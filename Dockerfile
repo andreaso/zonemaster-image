@@ -40,7 +40,7 @@ RUN apt-get update \
   libyaml-libyaml-perl \
   make \
   && rm -rf /var/lib/apt/lists/*
-RUN cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-LDNS-4.0.0.tar.gz \
+RUN cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-LDNS-4.0.1.tar.gz \
     && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-Engine-v5.0.0.tar.gz \
     && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-CLI-v6.1.0.tar.gz \
     && rm -rf /root/.cpanm/
