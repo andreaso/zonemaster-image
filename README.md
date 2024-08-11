@@ -44,6 +44,6 @@ The Docker image is tagged according to corresponding [Zonemaster release][4].
 [2]: https://www.afnic.fr/
 [3]: https://internetstiftelsen.se/
 [4]: https://github.com/zonemaster/zonemaster/releases
-[5]: https://github.com/zonemaster/zonemaster/blob/master/docs/specifications/tests/Nameserver-TP/nameserver03.md
+[5]: https://github.com/zonemaster/zonemaster/blob/master/docs/public/specifications/tests/Nameserver-TP/nameserver03.md
 [6]: https://hub.docker.com/r/zonemaster/cli
 [7]: https://github.com/zonemaster/zonemaster-cli/blob/master/README.md#docker
