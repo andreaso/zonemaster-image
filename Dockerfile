@@ -25,25 +25,24 @@ RUN apt-get update \
   libmodule-find-perl \
   libmodule-install-xsutil-perl \
   libmoosex-getopt-perl \
-  libmoosex-singleton-perl \
   libnet-ip-xs-perl \
   libpod-coverage-perl \
   libreadonly-perl \
   libssl-dev \
+  libsub-override-perl \
   libtest-differences-perl \
   libtest-exception-perl \
   libtest-fatal-perl \
   libtest-nowarnings-perl \
   libtest-pod-perl \
   libtext-csv-perl \
-  libtext-reflow-perl \
   libtry-tiny-perl \
   libyaml-libyaml-perl \
   make \
   && rm -rf /var/lib/apt/lists/*
-RUN cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-LDNS-4.0.1.tar.gz \
-    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-Engine-v5.0.0.tar.gz \
-    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-CLI-v6.1.0.tar.gz \
+RUN cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-LDNS-4.0.2.tar.gz \
+    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-Engine-v6.0.0.tar.gz \
+    && cpanm https://cpan.metacpan.org/authors/id/Z/ZN/ZNMSTR/Zonemaster-CLI-v7.0.0.tar.gz \
     && rm -rf /root/.cpanm/
 COPY entry /entry
 COPY profile.json.in /etc/zonemaster-profile.json.in
