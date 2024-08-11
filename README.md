@@ -13,11 +13,11 @@ for the Zonemaster project.
 ## Usage
 
 ```shell
-docker run --rm --user=4848 --cap-drop=all --security-opt=no-new-privileges --read-only --tty ghcr.io/andreaso/zonemaster-cli:2023.2.1-1 --help
+docker run --rm --user=4848 --cap-drop=all --security-opt=no-new-privileges --read-only --tty ghcr.io/andreaso/zonemaster-cli:2023.2.1-2 --help
 ```
 
 ```shell
-docker run --rm --user=4848 --cap-drop=all --security-opt=no-new-privileges --read-only --network=host --tty ghcr.io/andreaso/zonemaster-cli:2023.2.1-1 DOMAIN
+docker run --rm --user=4848 --cap-drop=all --security-opt=no-new-privileges --read-only --network=host --tty ghcr.io/andreaso/zonemaster-cli:2023.2.1-2 DOMAIN
 ```
 
 (Suggesting `--network=host` since it's more likely to have IPv6 connectivity by default.)
