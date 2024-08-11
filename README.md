@@ -13,11 +13,11 @@ for the Zonemaster project.
 ## Usage
 
 ```shell
-docker run --rm --user=4848 --cap-drop=all --security-opt=no-new-privileges --read-only --tty ghcr.io/andreaso/zonemaster-cli:2024.1-1 --help
+docker run --rm --user=4848 --cap-drop=all --security-opt=no-new-privileges --read-only --tty ghcr.io/andreaso/zonemaster-cli:2024.1-2 --help
 ```
 
 ```shell
-docker run --rm --user=4848 --cap-drop=all --security-opt=no-new-privileges --read-only --network=host --tty ghcr.io/andreaso/zonemaster-cli:2024.1-1 DOMAIN
+docker run --rm --user=4848 --cap-drop=all --security-opt=no-new-privileges --read-only --network=host --tty ghcr.io/andreaso/zonemaster-cli:2024.1-2 DOMAIN
 ```
 
 (Suggesting `--network=host` since it's more likely to have IPv6 connectivity by default.)
@@ -30,6 +30,9 @@ the default in that the [nameserver03][5] AXFR test is skipped. Partly
 because arbitrary AXFR queries can potentially be seen as noisy or
 impolite. Partly because it's not a configuration issue I'm overly
 concerned about once you get past your initial setup.
+
+Likewise is the [nameserver15][8] version test skipped, since I don't
+care whatever a nameserver exposes its software version or not.
 
 There is also a crude attempt being made to autodetect whatever the
 container running this image is capable of doing IPv6 queries or not.
@@ -47,3 +50,4 @@ The Docker image is tagged according to corresponding [Zonemaster release][4].
 [5]: https://github.com/zonemaster/zonemaster/blob/master/docs/public/specifications/tests/Nameserver-TP/nameserver03.md
 [6]: https://hub.docker.com/r/zonemaster/cli
 [7]: https://github.com/zonemaster/zonemaster-cli/blob/master/README.md#docker
+[8]: https://github.com/zonemaster/zonemaster/blob/master/docs/public/specifications/tests/Nameserver-TP/nameserver15.md
