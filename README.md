@@ -1,3 +1,8 @@
+**This repository is archived.**
+
+**Now that the Ubuntu [zonemaster-cli][9] package is reasonbly up-to-date I'll be using it instead.**
+
+
 # Zonemaster Docker image
 
 This repository is used to produce a custom [Zonemaster CLI][1] Docker
@@ -51,3 +56,4 @@ The Docker image is tagged according to corresponding [Zonemaster release][4].
 [6]: https://hub.docker.com/r/zonemaster/cli
 [7]: https://github.com/zonemaster/zonemaster-cli/blob/master/README.md#docker
 [8]: https://github.com/zonemaster/zonemaster/blob/master/docs/public/specifications/tests/Nameserver-TP/nameserver15.md
+[9]: https://launchpad.net/ubuntu/+source/zonemaster-cli
